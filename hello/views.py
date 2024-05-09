@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.http import JsonResponse
 
 
 def hello(request):
-    return HttpResponse("Hello, Tuyen!")
+    return JsonResponse({
+            "name": "Thuy"
+        })

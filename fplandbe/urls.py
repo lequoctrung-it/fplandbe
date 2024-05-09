@@ -19,5 +19,5 @@ from django.urls import path
 from hello import views
 
 urlpatterns = [
-    path('hello/', views.hello),
+    path('api/hello/', views.hello),
 ]
