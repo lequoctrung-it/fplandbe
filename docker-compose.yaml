@@ -1,9 +1,0 @@
-version: '3.8'
-services:
-  server:
-    build: .
-    image: fpland-backend
-    volumes:
-      - .:/code
-    ports:
-      - "8000:8000"

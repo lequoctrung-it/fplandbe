@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: docker/local.Dockerfile
+    image: fpland-backend:latest
+    volumes:
+      - ..:/usr/src/app
+    ports:
+      - "8000:8000"

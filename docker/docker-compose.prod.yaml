@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: docker/production.Dockerfile
+    image: fpland-backend:prod
+    ports:
+      - "8000:8000"
