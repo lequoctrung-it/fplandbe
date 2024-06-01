@@ -7,5 +7,21 @@ services:
     image: fpland-backend:latest
     volumes:
       - ..:/usr/src/app
+    command: ["/wait-for-it.sh", "db:5432", "--", "/entrypoint.sh"]
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    environment:
+#      POSTGRES_USER: ${DB_USER}
+#      POSTGRES_PASSWORD: ${DB_PASSWORD}
+#      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: fpland
+      POSTGRES_PASSWORD: fpland
+      POSTGRES_DB: fpland
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/run/postgresql:/var/run/postgresql
